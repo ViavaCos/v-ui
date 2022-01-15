@@ -1,5 +1,5 @@
 <template>
-  <div class="v-button" @click="$emit('click')">
+  <div class="v-button" @click="$emit('click')" :style="{ '--color': 'skyblue' }">
       <slot></slot>
   </div>
 </template>
@@ -18,4 +18,9 @@ export default {
 
 <style lang="less" scoped>
 @import './index.less';
+
+@color: var(--color);
+.v-button {
+  border: 1px solid @color;
+}
 </style>
